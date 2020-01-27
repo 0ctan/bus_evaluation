@@ -1,5 +1,6 @@
 import pandas as pd
 import sys
+import re
 
 args = sys.argv
 
@@ -14,4 +15,19 @@ df.dropna(axis=0,inplace=True)
 print(df.shape)
 print(df.isnull().sum())
 
-df.to_csv("data/clean.csv", index=False)
+df.to_csv("data/testa.csv", index=False)
+
+
+with open("data/testa.csv", "r") as f:
+    s=f.read()
+
+
+# timeを計算可能な形式に
+s = s.replace('-', ',')
+s = s.replace('T', ',')
+s = s.replace(':', ',')
+s = re.sub(r'\....Z', '', s)
+
+
+with open("data/aaa.csv", "w") as f:
+    f.write(s)
