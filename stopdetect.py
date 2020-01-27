@@ -41,7 +41,7 @@ shonanflag = datetime.datetime(1990,1,1)
 
 for n in range(length):
     if 23 <= lh[n] or lh[n]<8 : # 08:00:00〜16:59:59(JST)まで有効コードはUTC表記
-        if 35.3076<=llat[n]<=35.3080 : # 慶育病院
+        if 35.3907<=llat[n]<=35.3911 : # 慶育病院
             if 139.4313<=llon[n]<=139.4317 :
                 # 慶育判定
                 time = datetime.datetime(lyear[n], lmonth[n], lday[n], lh[n], lmin[n], lsec[n])
