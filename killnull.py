@@ -15,10 +15,10 @@ df.dropna(axis=0,inplace=True)
 print(df.shape)
 print(df.isnull().sum())
 
-df.to_csv("data/testa.csv", index=False)
+df.to_csv("data/tmp.csv", index=False)
 
 
-with open("data/testa.csv", "r") as f:
+with open("data/tmp.csv", "r") as f:
     s=f.read()
 
 
@@ -29,5 +29,5 @@ s = s.replace(':', ',')
 s = re.sub(r'\....Z', '', s)
 
 
-with open("data/aaa.csv", "w") as f:
+with open("data/clean.csv", "w") as f:
     f.write(s)
