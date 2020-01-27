@@ -35,9 +35,9 @@ length = len(lyear)
 # 基準は+-0.0002以内かどうか
 busstopnow = list()
 
-global keiikuflag
-global yokadoflag
-global shonanflag
+keiikuflag = datetime.datetime(1990,1,1)
+yokadoflag = datetime.datetime(1990,1,1)
+shonanflag = datetime.datetime(1990,1,1)
 
 for n in range(length):
     if 23 <= lh[n] or lh[n]<8 : # 08:00:00〜16:59:59(JST)まで有効コードはUTC表記
