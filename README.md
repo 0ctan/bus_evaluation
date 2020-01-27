@@ -1,5 +1,8 @@
 # bus_evaluation
 卒論評価取り
+
+UTC JST変換はあとで
+
 ## usage 
 
 $python killnull.py data/hoge.csv

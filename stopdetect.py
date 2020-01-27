@@ -1,10 +1,12 @@
 import pandas as pd
 import sys
 import datetime
+import csv
 
 args = sys.argv
 
-file = args[1]
+# file = args[1]
+file = "data/clean.csv"
 
 f = pd.read_csv(file)
 
@@ -54,13 +56,17 @@ for n in range(length):
                 if yokadoflag < time:
                     # フラグなかったとき
                     busstopnow.append([lyear[n], lmonth[n], lday[n], lh[n], lmin[n], lsec[n], "yokado"]) # リストに追加
-                    yokadoflag =　time + datetime.timedelta(minutes=25)　 # 25分後にフラグを設定
+                    yokadoflag = time + datetime.timedelta(minutes=25)  # 25分後にフラグを設定
         if 35.3951<=llat[n]<=35.3955 : # 湘南台
             if 139.4662<=llon[n]<=139.4666 :
                 # 湘南台判定
                 time = datetime.datetime(lyear[n], lmonth[n], lday[n], lh[n], lmin[n], lsec[n])
                 if shonanflag < time:
                     # フラグなかったとき
-                    busstopnow.append([lyear[n], lmonth[n], lday[n], lh[n], lmin[n], lsec[n], "shonan"]) # リストに追加
-                    shonanflag =　time + datetime.timedelta(minutes=25)　 # 25分後にフラグを設定
-            
+                    busstopnow.append([lyear[n], lmonth[n], lday[n], lh[n], lmin[n], lsec[n], "shonandai"]) # リストに追加
+                    shonanflag = time + datetime.timedelta(minutes=25)  # 25分後にフラグを設定
+
+# csvに書き込み
+with open('data/stoptime.csv', 'w') as file:
+    writer = csv.writer(file, lineterminator='\n')
+    writer.writerows(busstopnow)
