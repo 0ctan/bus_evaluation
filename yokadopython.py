@@ -17,4 +17,5 @@ while a <=12:
     print('    table = table + datetime.timedelta(hours=+9)')
     print('    delay = jst- table')
     print('    A'+str(lnum)+'.append([jst, delay])')
+    print('    csving.append([jst.year, jst.month, jst.day, jst.weekday(), jst.hour, jst.minute, jst.second, lstop[n], \'A'+str(lnum)+'\', delay])')
     a = lnum
