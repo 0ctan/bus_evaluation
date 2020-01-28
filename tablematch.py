@@ -127,3 +127,5 @@ for n in range(length):
             table = table + datetime.timedelta(hours=+9)
             delay = jst- table
             A13.append([jst, delay])
+
+
