@@ -10,6 +10,8 @@ $python stopdetect.py
 $python tablematch.py
 
 
+weekdayと曜日の対応
+    0: 月, 1: 火, 2: 水, 3: 木, 4: 金, 5: 土, 6: 日
 
 ## データの取得
 mongoexport -d bus_location -c keiiku_A --out 20200102.csv --type csv --fields "time,lat,lon"
