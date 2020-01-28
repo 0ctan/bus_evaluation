@@ -101,7 +101,7 @@ for n in range(length):
             delay = jst- table
             A8.append([jst, delay])
             csving.append([jst.year, jst.month, jst.day, jst.weekday(), jst.hour, jst.minute,  jst.second, lstop[n], 'A8', delay])
-        elif datetime.time(13,16)<= jstime <= datetime.time(14,55):
+        elif datetime.time(13,16)<= jstime <= datetime.time(13,55):
             # A9便に該当
             table = datetime.datetime(lyear[n], lmonth[n], lday[n],4,26)
             table = table + datetime.timedelta(hours=+9)
@@ -122,14 +122,14 @@ for n in range(length):
             delay = jst- table
             A11.append([jst, delay])
             csving.append([jst.year, jst.month, jst.day, jst.weekday(), jst.hour, jst.minute,  jst.second, lstop[n], 'A11', delay])
-        elif datetime.time(15,16)<= jstime <= datetime.time(16,55):
+        elif datetime.time(15,16)<= jstime <= datetime.time(15,55):
             # A12便に該当
             table = datetime.datetime(lyear[n], lmonth[n], lday[n],6,26)
             table = table + datetime.timedelta(hours=+9)
             delay = jst- table
             A12.append([jst, delay])
             csving.append([jst.year, jst.month, jst.day, jst.weekday(), jst.hour, jst.minute,  jst.second, lstop[n], 'A12', delay])
-        elif datetime.time(16,56)<= jstime <= datetime.time(16,35):
+        elif datetime.time(15,56)<= jstime <= datetime.time(16,35):
             # A13便に該当
             table = datetime.datetime(lyear[n], lmonth[n], lday[n],7,6)
             table = table + datetime.timedelta(hours=+9)
