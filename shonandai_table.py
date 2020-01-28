@@ -44,7 +44,7 @@ csving = list()
 
 
 for n in range(length):
-    if lstop[n] == 'shonan':
+    if lstop[n] == 'shonandai':
         time = datetime.datetime(lyear[n], lmonth[n], lday[n], lh[n], lmin[n], lsec[n])
         jst = time + datetime.timedelta(hours=+9)
         jstime = jst.time()
