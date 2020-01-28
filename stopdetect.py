@@ -49,7 +49,7 @@ for n in range(length):
                     # フラグなかったとき
                     busstopnow.append([lyear[n], lmonth[n], lday[n], lh[n], lmin[n], lsec[n], "keiiku"]) # リストに追加
                     keiikuflag = time + datetime.timedelta(minutes=25) # 25分後にフラグを設定
-        if 35.3914<=llat[n]<=35.3918 : # よーかどー
+        elif 35.3914<=llat[n]<=35.3918 : # よーかどー
             if 139.4471<=llon[n]<=139.4475 :
                 # ヨーカどー判定
                 time = datetime.datetime(lyear[n], lmonth[n], lday[n], lh[n], lmin[n], lsec[n])
@@ -57,7 +57,7 @@ for n in range(length):
                     # フラグなかったとき
                     busstopnow.append([lyear[n], lmonth[n], lday[n], lh[n], lmin[n], lsec[n], "yokado"]) # リストに追加
                     yokadoflag = time + datetime.timedelta(minutes=25)  # 25分後にフラグを設定
-        if 35.3951<=llat[n]<=35.3955 : # 湘南台
+        elif 35.3951<=llat[n]<=35.3955 : # 湘南台
             if 139.4662<=llon[n]<=139.4666 :
                 # 湘南台判定
                 time = datetime.datetime(lyear[n], lmonth[n], lday[n], lh[n], lmin[n], lsec[n])

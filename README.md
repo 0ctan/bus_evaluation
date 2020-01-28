@@ -7,6 +7,7 @@ UTC JST変換はあとで
 
 $python killnull.py data/hoge.csv
 $python stopdetect.py
+$python tablematch.py
 
 
 
