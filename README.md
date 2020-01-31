@@ -2,6 +2,7 @@
 卒論評価取り
 
 UTC JST変換はあとで
+timetable.csvは00:00:00基準の秒数
 
 ## usage 
 
