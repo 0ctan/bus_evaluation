@@ -6,34 +6,15 @@ import sys
 # ETA読み込み
 args = sys.argv
 file = "data/"+args[1]+"_etatable.csv"
-f = pd.read_csv(file, header=None)
+etadict = []
 
-# 絞り込み
-use = f[[0,1,2]]
-# use[2] = pd.to_timedelta(use[2]) 
-# use[2]は秒数での00:00:00からの経過時間が入っている
-weekday_bin = use.groupby([0,1])
+with open(file, newline='') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        print(row)
+        etadict.append(row)
 
-# 時刻表データ
-tt = pd.read_csv("data/timetable.csv")
-# 配列に入れる
-ttbin = []
-ttyokado = []
-ttshonandai = []
-ttkeiiku = []
-
-ttbin = tt['bin']
-ttyokado = tt['yokado']
-ttshonandai = tt['shonandai']
-ttkeiiku = tt['keiiku']
-
-# print(weekday_bin.groups)
-# mean = weekday_bin.mean()
-# csvに書き込み
-# mean.to_csv("ave_delayall.csv")
-# print(mean.loc[0,'A1']) # 月曜のA1便の平均遅延
-
-# 今週の運行情報読み込み
+# 今週のdata読み込み
 file2 = "data/eva"+args[1]+".csv"
 f2 = pd.read_csv(file2, header=None)
 eva = f2[[3,8,9]]
@@ -41,10 +22,13 @@ eva[9] = pd.to_timedelta(eva[9])
 eva[9] = eva[9].dt.total_seconds() # 時間を秒単位に変換
 consyu = eva.groupby([3,8])
 
+
+
+
+length = len(etadict)
+
+print(etadict[0][2])
 youbi = 0
-evaluation = list()
-aho = "tt"+args[1]
-str(aho)
 
 while youbi <= 4:
     #曜日ごと
@@ -62,8 +46,4 @@ while youbi <= 4:
     youbi = youbi + 1
     
 
-# # csvに書き込み
-# with open('evaluation/'+args[1]+'_A.csv', 'w') as file:
-#     writer = csv.writer(file, lineterminator='\n')
-#     writer.writerows(evaluation)
-
+# for n in range(length)
