@@ -19,6 +19,8 @@ mongoexport -d bus_location -c keiiku_A --out 20200102.csv --type csv --fields "
 
 以上。はい簡単
 
+mongoexport -d bus_location -c keiiku_A --out eve20200131.csv --type csv --fields "time,lat,lon"
+
 ## 有効ログ
 書き日時以降
 2019-12-09T08:45:02

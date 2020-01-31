@@ -5,8 +5,8 @@ import csv
 
 args = sys.argv
 
-# file = args[1]
-file = "data/clean.csv"
+file = args[1]
+# file = "data/clean.csv"
 
 f = pd.read_csv(file)
 
