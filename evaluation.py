@@ -40,23 +40,25 @@ eva = f2[[3,8,9]]
 eva[9] = pd.to_timedelta(eva[9])
 eva[9] = eva[9].dt.total_seconds() # 時間を秒単位に変換
 consyu = eva.groupby([3,8])
+consyu = consyu.mean()
 
 youbi = 0
 evaluation = list()
-aho = "tt"+args[1]
-str(aho)
+# aho = "tt"+args[1]
+# str(aho)
 
 while youbi <= 4:
     #曜日ごと
     binnmei = 0
     while binnmei <= 12:
         # 便ごと
-        table = aho[binnmei] #tableには秒数で絶対時刻が入ってる
+        table = ttkeiiku[binnmei] #tableには秒数で絶対時刻が入ってる
         binnmei = binnmei + 1
         tmpbin = str(binnmei)
         target = "A"+tmpbin
         # consyuがプラマイ秒でweekday_binが秒の絶対時刻。そのためtableを＋してkekkaには差分だけ入れる
         print(consyu.loc[youbi, target])
+        
         # kekka = consyu.loc[youbi, target] - weekday_bin.loc[youbi, target] + table # kekkaは秒数、時刻表からのプラマイで入ってる。小さほど正義
         # evaluation.append([youbi, target, kekka])
     youbi = youbi + 1

@@ -21,6 +21,7 @@ eva = f2[[3,8,9]]
 eva[9] = pd.to_timedelta(eva[9])
 eva[9] = eva[9].dt.total_seconds() # 時間を秒単位に変換
 consyu = eva.groupby([3,8])
+consyu = consyu.mean()
 
 
 
@@ -35,7 +36,7 @@ while youbi <= 4:
     binnmei = 0
     while binnmei <= 12:
         # 便ごと
-        table = aho[binnmei] #tableには秒数で絶対時刻が入ってる
+        table = etadict[youbi][binnmei] # tableには秒数で絶対時刻が入ってる
         binnmei = binnmei + 1
         tmpbin = str(binnmei)
         target = "A"+tmpbin
